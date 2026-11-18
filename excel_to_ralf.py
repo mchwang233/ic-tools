@@ -86,10 +86,7 @@ def load_excel(path, sheet):
         if col in df.columns:
             df[col] = df[col].ffill()
 
-    return df
-
-
-def generate_ralf(df, bytes_per_word=4):
+    # 没有可继承的块名时，使用默认块 TOP。\n    df["BlockName"] = df["BlockName"].fillna("TOP")\n\n    return df\n\n\ndef generate_ralf(df, bytes_per_word=4):
     """
     根据 8 列格式生成符合目标风格的 RALF：
 
